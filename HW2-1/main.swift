@@ -47,11 +47,13 @@ class Car{
     func printInfo(){
        print("Name = \(name)\nModel - \(model)\nmaxSpeed - \(maxSpeed)")
         print("update")
-        update(name: "BMW", model: "220", maxSpeed: 240)
+//        update(name: "BMW", model: "220", maxSpeed: 240)
       }
 }
 var BMW = Car(name: "BMW", model: "210", maxSpeed: 220)
+var update = Car(name: "BMW", model: "220", maxSpeed: 240)
 BMW.printInfo()
+update.printInfo()
 
 class Bank{
     var name: String
@@ -67,7 +69,7 @@ class Bank{
     func printInfo(){
         print("Name = \(name)\nStreet - \(street)\ntype - \(type)")
         for person in array1 {
-            print("Имя - \(person.name) Фамилия - \(person.lastname) возраст - \(person.age) персоныльный номер - \(person.ID)")
+            print("Имя - \(person.name) Фамилия - \(person.lastname) персоныльный номер - \(person.ID) перевод средств - \(person.perevod)")
     }
     }
         func addArray1(person: Client){
@@ -75,32 +77,31 @@ class Bank{
         }
 }
 
-var Mbank = Bank(name: "mbank", street: "Ibraimova123", type: "kommerz")
-    Mbank.printInfo()
+var mbank = Bank(name: "mbank", street: "Ibraimova123", type: "kommerz")
+    mbank.printInfo()
 
 class Client {
     var name: String
     var lastname: String
-    var age: Int
     var ID: Int
-    
-    init (name: String, lastname: String, age: Int, ID: Int){
+    var perevod:Int
+    init (name: String, lastname: String, ID: Int, perevod: Int){
         self.name = name
         self.lastname = lastname
-        self.age = age
         self.ID = ID
+        self.perevod = perevod
 }
     func printInfo(){
-        print("\(name), \(lastname), \(age), \(ID)")
+        print("\(name), \(lastname), \(ID), \(perevod)")
     }
 }
-var Helen = Client(name: "Helen", lastname: "Scot", age: 17, ID: 132847837)
-var Rinat = Client(name: "Rinat", lastname: "Nusipaev", age: 20, ID: 74837982)
+var Helen = Client(name: "Helen", lastname: "Scot", ID: 132847837, perevod: 1200)
+var Rinat = Client(name: "Rinat", lastname: "Nusipaev", ID: 74837982, perevod: 7700)
      
-Mbank.addArray1(person: Helen)
-Mbank.addArray1(person: Rinat)
+mbank.addArray1(person: Helen)
+mbank.addArray1(person: Rinat)
 
-Mbank.printInfo()
+mbank.printInfo()
 class Store{
     var name: String
     var type: String
@@ -124,8 +125,8 @@ class Store{
         array.append(product)
     }
 }
-var Народный = Store(name: "Народный", type: "продуктовый", loc: "в центре", year: 2015)
-Народный.printInfo()
+var narodnyi = Store(name: "Народный", type: "продуктовый", loc: "в центре", year: 2015)
+narodnyi.printInfo()
 
 class Product{
     var cost: String
@@ -147,8 +148,8 @@ var banan = Product(cost: "35", name: "Banan", shtuk: 3000)
 var kurut = Product(cost: "10", name: "kurut", shtuk: 16000)
 var AlpenGold = Product(cost: "104", name: "AlpenGold", shtuk: 12)
 
-Народный.addArray(product: banan)
-Народный.addArray(product: kurut)
-Народный.addArray(product: AlpenGold)
+narodnyi.addArray(product: banan)
+narodnyi.addArray(product: kurut)
+narodnyi.addArray(product: AlpenGold)
 
-Народный.printInfo()
+narodnyi.printInfo()
